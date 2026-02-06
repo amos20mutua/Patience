@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A special birthday celebration for Patience">
+    <title>Happy Birthday Patience 🎉 | CS Dreamer</title>
+    
+    <!-- Performance: Preconnect to CDNs -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Google Fonts (optimized) -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&family=Pacifico:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#e879f9',
+                        tech: '#38bdf8',
+                        darkbg: '#18181b',
+                        sparkle: '#f472b6',
+                        warm: '#ffb347',
+                        gold: '#ffd700',
+                    },
+                    fontFamily: {
+                        techno: ['"Share Tech Mono"', 'monospace'],
+                        script: ['"Pacifico"', 'cursive'],
+                    },
+                    boxShadow: {
+                        glow: '0 0 16px 2px #e879f9, 0 0 32px 4px #38bdf8',
+                        soft: '0 8px 24px rgba(232, 121, 249, 0.15)',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        twinkle: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '1' },
+                        },
+                        gently: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        },
+                        pulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        },
+                        bounce: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        spin: {
+                            'to': { transform: 'rotate(360deg)' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(232, 121, 249, 0.5), 0 0 40px rgba(56, 189, 248, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(232, 121, 249, 0.8), 0 0 80px rgba(56, 189, 248, 0.6)' },
+                        },
+                        slideInDown: {
+                            'from': { opacity: '0', transform: 'translateY(-30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInUp: {
+                            'from': { opacity: '0', transform: 'translateY(30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleInCenter: {
+                            'from': { opacity: '0', transform: 'scale(0.8)' },
+                            'to': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        colorShift: {
+                            '0%': { color: '#e879f9' },
+                            '50%': { color: '#38bdf8' },
+                            '100%': { color: '#ffd700' },
+                        },
+                    },
+                    animation: {
+                        float: 'float 4s ease-in-out infinite',
+                        twinkle: 'twinkle 3s ease-in-out infinite',
+                        gently: 'gently 4s ease-in-out infinite',
+                        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        bounce: 'bounce 1.8s ease-in-out infinite',
+                        spin: 'spin 4s linear infinite',
+                        glow: 'glow 3s ease-in-out infinite',
+                        slideInDown: 'slideInDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        slideInUp: 'slideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        scaleInCenter: 'scaleInCenter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        colorShift: 'colorShift 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #18181b;
+            color: #fff;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
+            line-height: 1.6;
+        }
+        
+        /* Glass morphism effect with better performance */
+        .glass-card, .voucher-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 24px rgba(80, 0, 120, 0.12);
+            will-change: transform;
+        }
+        
+        .glass-card:hover, .voucher-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(232, 121, 249, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Typography improvements */
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            background: linear-gradient(135deg, #e879f9, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+        
+        p {
+            font-size: clamp(1rem, 1.1vw, 1.2rem);
+            line-height: 1.7;
+        }
+        
+        /* Particles canvas optimization */
+        #particles {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            will-change: contents;
+        }
+        
+        /* Main content with better depth */
+        main {
+            position: relative;
+            z-index: 10;
+            min-height: 90vh;
+        }
+        
+        /* Hold button enhancement */
+        .hold-btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e879f9, #38bdf8);
+            color: #fff;
+            border: 2px solid rgba(232, 121, 249, 0.5);
+            border-radius: 50px;
+            padding: 0.875rem 1.75rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(232, 121, 249, 0.4), 0 0 40px rgba(56, 189, 248, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            will-change: transform, box-shadow;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        .hold-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 40px rgba(232, 121, 249, 0.7), 0 0 80px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            border-color: rgba(232, 121, 249, 0.8);
+        }
+        
+        .hold-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .hold-btn::after {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border: 4px solid rgba(255, 215, 0, 0.95);
+            border-radius: 50px;
+            animation: buttonRingPulse 2.5s ease-in-out infinite;
+            pointer-events: none;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+        
+        @keyframes buttonRingPulse {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), inset 0 0 15px rgba(255, 215, 0, 0.2);
+                opacity: 0.9;
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 215, 0, 1), inset 0 0 30px rgba(255, 215, 0, 0.5);
+                opacity: 1;
+            }
+        }
+        
+        .hold-btn-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .hold-btn-label {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Voucher section styling */
+        .voucher-btn {
+            background: linear-gradient(135deg, #e879f9, #38bdf8);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .voucher-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(232, 121, 249, 0.3);
+        }
+        
+        .voucher-btn:active {
+            transform: scale(0.98);
+        }
+        
+        /* Future cards styling */
+        .future-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            border: 2px solid rgba(232, 121, 249, 0.3);
+            padding: 2rem 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, opacity;
+            position: relative;
+            overflow: hidden;
+            animation: scaleInCenter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+        
+        .future-card:nth-child(1) { animation-delay: 0.8s; }
+        .future-card:nth-child(2) { animation-delay: 1.8s; }
+        .future-card:nth-child(3) { animation-delay: 2.8s; }
+        
+        .future-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(232, 121, 249, 0.1), rgba(56, 189, 248, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .future-card:hover::before {
+            opacity: 1;
+        }
+        
+        .future-card:hover {
+            transform: translateY(-12px) scale(1.05);
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 20px 50px rgba(232, 121, 249, 0.25), 0 0 40px rgba(56, 189, 248, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Countdown styling */
+        .countdown {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(24, 24, 26, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #e879f9;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes softspin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes breatheFade {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes confetti-fall-left {
+            to {
+                transform: translateX(var(--fall-x, 40px)) translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes confetti-fall-right {
+            to {
+                transform: translateX(var(--fall-x, -40px)) translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes confetti-burst {
+            0% {
+                transform: translateX(0) translateY(0) scale(1);
+            }
+            30% {
+                transform: translateX(var(--burst-x, 0)) translateY(var(--burst-y, 0)) scale(1.2);
+            }
+            100% {
+                transform: translateX(var(--burst-x, 0)) translateY(calc(var(--burst-y, 0) + 100vh)) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        .confetti-piece.falling {
+            animation: confetti-fall 30s ease-out forwards;
+        }
+        
+        @keyframes hintPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 179, 71, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(255, 215, 0, 0.3), 0 0 40px rgba(232, 121, 249, 0.6);
+            }
+        }
+        
+        .hint-ring {
+            animation: hintPulse 2.5s ease-in-out infinite;
+            opacity: 1;
+            visibility: visible;
+            display: block;
+        }
+        
+        /* Persistent hint on first slide */
+        #persistent-hint {
+            position: fixed;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            font-size: 2.5rem;
+            animation: arrowBounce 2.5s ease-in-out infinite, arrowPulse 3s ease-in-out infinite;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        #persistent-hint.show {
+            opacity: 1;
+        }
+        
+        #persistent-hint-label {
+            position: fixed;
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: rgba(255, 51, 51, 0.95);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+            border: 2px solid #ff3333;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.6);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        #persistent-hint-label.show {
+            opacity: 1;
+        }
+        
+        /* Red arrow pointer style */
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateY(0) rotate(-45deg); }
+            50% { transform: translateY(-10px) rotate(-45deg); }
+        }
+        
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .arrow-pointer {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            color: #ff3333;
+            animation: arrowBounce 2.5s ease-in-out infinite, arrowPulse 3s ease-in-out infinite;
+            font-size: 2rem;
+            z-index: 50;
+        }
+        
+        .button-hint-label {
+            position: absolute;
+            background: rgba(255, 51, 51, 0.95);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            white-space: nowrap;
+            border: 2px solid #ff3333;
+            z-index: 50;
+            animation: slideInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        
+        .animate-fadeIn.delay-100 { animation-delay: 0.4s; }
+        .animate-fadeIn.delay-200 { animation-delay: 0.8s; }
+        .animate-fadeIn.delay-300 { animation-delay: 1.2s; }
+        .animate-fadeIn.delay-400 { animation-delay: 1.6s; }
+        
+        .animate-softspin {
+            animation: softspin 3.5s linear infinite;
+        }
+        
+        .animate-breathe-fade {
+            animation: breatheFade 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Busier visual additions */
+        .shimmer-glow {
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        .pulse-glow {
+            box-shadow: 0 0 20px rgba(232, 121, 249, 0.6);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        section {
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        
+        section:nth-child(1) { animation-delay: 0s; }
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        
+        /* Advanced text animation */
+        .magic-text {
+            animation: slideInDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+        
+        .magic-text.delay-1 { animation-delay: 0.6s; }
+        .magic-text.delay-2 { animation-delay: 1.4s; }
+        .magic-text.delay-3 { animation-delay: 2.2s; }
+        .magic-text.delay-4 { animation-delay: 3.0s; }
+        
+        /* Glowing title */
+        .glow-title {
+            text-shadow: 0 0 10px rgba(232, 121, 249, 0.5), 0 0 20px rgba(56, 189, 248, 0.3), 0 0 40px rgba(232, 121, 249, 0.2);
+            animation: colorShift 6s ease-in-out infinite, float 4s ease-in-out infinite;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        /* Game-like progress */
+        .progress-number {
+            animation: scaleInCenter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .progress-line {
+            animation: slideInDown 1.2s ease-out;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 640px) {
+            main {
+                padding: 1rem;
+            }
+            
+            .voucher-card {
+                padding: 1rem;
+            }
+            
+            .hold-btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Reduced motion respect */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            #particles,
+            button,
+            .hold-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-darkbg">
+    <!-- Animated Particles Background (optimized) -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+    
+    <!-- Main Content -->
+    <main class="w-full max-w-2xl mx-auto p-4 sm:p-8 flex flex-col items-center justify-center">
+        <!-- Progress Indicator -->
+        <div id="progress" class="flex items-center justify-center mb-8 w-full flex-wrap gap-2"></div>
+        
+        <!-- Persistent Hint (for first slide only) -->
+        <div id="persistent-hint">👆</div>
+        <div id="persistent-hint-label">Long press the button 👆</div>
+        
+        <!-- Step Content -->
+        <div id="step-content" class="w-full text-center transition-all duration-500"></div>
+        
+        <!-- Voucher Section (hidden by default) -->
+        <section id="voucherSection" class="hidden w-full max-w-md">
+            <div id="voucher-card" class="voucher-card mx-auto p-6 relative shimmer-glow">
+                <div></div>
+                <h2 class="text-2xl font-bold mb-3 text-center bg-gradient-to-r from-warm to-gold bg-clip-text text-transparent">🎉 Your Gift 🎉</h2>
+                <iframe src="voucher.pdf" class="w-full rounded-lg border-2 border-gold bg-white mb-4" style="min-height: 220px; height: 280px;" title="Birthday Voucher"></iframe>
+                <div class="flex justify-center gap-3 flex-wrap mt-4 animate-fadeIn">
+                    <button id="voucher-download" class="voucher-btn" aria-label="Download voucher">
+                        <span>📥</span>Download
+                    </button>
+                    <button id="voucher-print" class="voucher-btn" aria-label="Print voucher">
+                        <span>🖨️</span>Print
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- PDF Modal (hidden by default) -->
+    <div id="pdf-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 relative flex flex-col items-center">
+            <button id="close-modal" class="absolute top-3 right-3 text-gray-400 hover:text-accent text-2xl font-bold" aria-label="Close modal">&times;</button>
+            <h3 class="text-lg font-bold text-tech mb-3">Your Voucher</h3>
+            <iframe id="pdf-frame" src="" class="w-full rounded border border-accent" style="height: 400px; background: #f8fafc;" title="Voucher preview"></iframe>
+            <p class="text-sm text-gray-600 mt-3">Download your special birthday voucher below.</p>
+        </div>
+    </div>
+
+    <!-- Defer heavy animation library loading -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <script>
+        // Performance: Optimize particles with better frame rate control
+        class ParticleSystem {
+            constructor(canvasId, particleCount = 32) {
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d', { alpha: true });
+                this.particles = [];
+                this.particleCount = particleCount;
+                this.time = 0;
+                this.animationId = null;
+                
+                this.resizeCanvas();
+                window.addEventListener('resize', () => this.resizeCanvas());
+                this.init();
+            }
+            
+            resizeCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            init() {
+                this.particles = Array.from({ length: this.particleCount }, () => this.createParticle());
+                this.animate();
+            }
+            
+            createParticle() {
+                return {
+                    x: Math.random() * this.canvas.width,
+                    y: Math.random() * this.canvas.height,
+                    vx: (Math.random() - 0.5) * 0.15,
+                    vy: (Math.random() - 0.5) * 0.15,
+                    size: Math.random() * 1.5 + 1,
+                    color: ['#e879f9', '#38bdf8', '#ffd700', '#ffb347', '#fff', '#f472b6'][Math.floor(Math.random() * 6)],
+                    twinkle: Math.random() * Math.PI * 2,
+                };
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                for (let p of this.particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.twinkle += 0.02;
+                    
+                    // Wrap around edges
+                    if (p.x < 0) p.x = this.canvas.width;
+                    if (p.x > this.canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = this.canvas.height;
+                    if (p.y > this.canvas.height) p.y = 0;
+                    
+                    // Draw with optimized alpha
+                    this.ctx.globalAlpha = 0.65 + 0.35 * Math.sin(this.time * 0.003 + p.twinkle);
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.shadowColor = p.color;
+                    this.ctx.shadowBlur = 6;
+                    this.ctx.fill();
+                }
+                
+                this.ctx.globalAlpha = 1;
+                this.time++;
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+            
+            stop() {
+                if (this.animationId) cancelAnimationFrame(this.animationId);
+            }
+        }
+        
+        // Initialize particles
+        const particleSystem = new ParticleSystem('particles', 32);
+        
+        // Main application logic
+        const steps = [
+            {
+                title: "Welcome Patience 👋",
+                content: `
+                    <div class="space-y-4">
+                        <h1 class="glow-title text-5xl animate-slideInDown mb-6">🎮 WELCOME TO THE ADVENTURE 🎮</h1>
+                        <p class="text-xl text-warm font-bold animate-slideInUp magic-text delay-1">✨ Happy Birthday to an amazing tech dreamer ✨</p>
+                        <p class="text-tech text-lg animate-slideInUp magic-text delay-2">Your journey to becoming an international dev just got more exciting! 🌍</p>
+                        <div class="flex justify-center gap-2 mt-8 animate-slideInUp magic-text delay-3">
+                            <span class="text-3xl animate-bounce">🎉</span>
+                            <span class="text-3xl animate-bounce" style="animation-delay: 0.1s;">✨</span>
+                            <span class="text-3xl animate-bounce" style="animation-delay: 0.2s;">🎊</span>
+                        </div>
+                        <div class="flex flex-col items-center mt-8 animate-slideInUp magic-text delay-4 relative">
+                            <button class="hold-btn relative z-10">
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">⚡ Begin Adventure ⚡</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Why CS? 💻",
+                content: `
+                    <div class="space-y-6">
+                        <h2 class="glow-title text-4xl animate-slideInDown">🌟 You Are Unstoppable 🌟</h2>
+                        <div class="space-y-3 animate-slideInUp magic-text delay-1">
+                            <div class="glass-card p-4 transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                                <p class="text-xl">💡 Sharp mind. Sharper code.</p>
+                            </div>
+                            <div class="glass-card p-4 transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                                <p class="text-xl">⚡ Faith-guided. Excellence-driven.</p>
+                            </div>
+                            <div class="glass-card p-4 transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                                <p class="text-xl">🌍 International dev in the making</p>
+                            </div>
+                        </div>
+                        <p class="text-warm text-lg font-bold animate-slideInUp magic-text delay-2">The tech world NEEDS your influence! 🚀</p>
+                        <div class="flex flex-col items-center animate-slideInUp magic-text delay-3 relative">
+                            <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                            <button class="hold-btn button-hint-label" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">→ Onward →</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "UoN Journey 🚀",
+                content: `
+                    <div class="space-y-6">
+                        <h2 class="glow-title text-4xl animate-slideInDown">🌍 International Dev Era 🌍</h2>
+                        <div class="text-center animate-slideInUp magic-text delay-1">
+                            <p class="text-2xl font-bold text-gold mb-2">UoN: Your Launchpad</p>
+                            <p class="text-tech text-lg">Where the journey to global impact begins</p>
+                        </div>
+                        <div class="glass-card p-6 text-center animate-scaleInCenter transform hover:glow effect cursor-pointer">
+                            <p class="text-3xl mb-3">🚀</p>
+                            <p class="text-white text-lg font-bold">Built Different</p>
+                            <p class="text-accent text-sm mt-2">Faith. Code. Excellence. Global Impact.</p>
+                        </div>
+                        <div class="flex justify-center gap-2 animate-slideInUp magic-text delay-2">
+                            <span class="text-4xl animate-float">🌐</span>
+                            <span class="text-4xl animate-float" style="animation-delay: 0.2s;">💻</span>
+                            <span class="text-4xl animate-float" style="animation-delay: 0.4s;">🌐</span>
+                        </div>
+                        <div class="flex flex-col items-center animate-slideInUp magic-text delay-3 relative">
+                            <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                            <button class="hold-btn button-hint-label" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">→ Continue →</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Pause & Breathe 🤍",
+                content: `
+                    <div class="space-y-8 text-center">
+                        <h2 class="glow-title text-4xl animate-slideInDown">✨ Take A Moment ✨</h2>
+                        <div class="animate-slideInUp magic-text delay-1">
+                            <p class="text-2xl text-warm font-bold mb-4">You've earned this</p>
+                            <p class="text-tech text-lg">Center yourself. Breathe. Feel the moment.</p>
+                        </div>
+                        <div class="flex justify-center animate-slideInUp magic-text delay-2">
+                            <div class="w-32 h-32 rounded-full border-4 border-transparent animate-spin"
+                                style="border-top-color: #e879f9; border-right-color: #38bdf8; animation-duration: 4s;"></div>
+                        </div>
+                        <button id="breathe-btn" class="hold-btn animate-slideInUp magic-text delay-3 text-lg button-hint-label relative" style="border-radius: 50px; padding: 0.875rem 1.75rem; margin-top: 2rem;">
+                            <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                            <span class="hold-btn-label">🫁 Breathe With Me 🫁</span>
+                        </button>
+                        <div id="breathe-overlay" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm">
+                            <div class="flex flex-col items-center space-y-8">
+                                <div id="breathe-count" class="text-9xl font-bold bg-gradient-to-r from-warm to-gold bg-clip-text text-transparent opacity-0 scale-50 transition-all duration-700 animate-scaleInCenter">5</div>
+                                <p class="text-2xl text-accent font-script">Breathe in... and out</p>
+                                <div class="flex gap-3">
+                                    <span class="text-4xl animate-bounce">💨</span>
+                                    <span class="text-4xl animate-bounce" style="animation-delay: 0.1s;">🤍</span>
+                                    <span class="text-4xl animate-bounce" style="animation-delay: 0.2s;">💨</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Your Future in CS",
+                content: `
+                    <div class="space-y-8">
+                        <h2 class="glow-title text-4xl animate-slideInDown text-center">🌟 International Dev Goals 🌟</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+                            <div class="future-card opacity-0 scale-95 transition-all duration-1000 group cursor-pointer">
+                                <span class="text-6xl mb-4 block group-hover:animate-bounce" style="display: inline-block; width: 100%; text-align: center;">🧠</span>
+                                <p class="text-2xl font-bold text-warm mb-2 text-center">Think Global</p>
+                                <p class="text-sm text-accent text-center">Solve problems for the world</p>
+                            </div>
+                            <div class="future-card opacity-0 scale-95 transition-all duration-1000 group cursor-pointer">
+                                <span class="text-6xl mb-4 block group-hover:animate-bounce" style="display: inline-block; width: 100%; text-align: center;">🌍</span>
+                                <p class="text-2xl font-bold text-gold mb-2 text-center">Build Impact</p>
+                                <p class="text-sm text-accent text-center">Code that changes nations</p>
+                            </div>
+                            <div class="future-card opacity-0 scale-95 transition-all duration-1000 group cursor-pointer">
+                                <span class="text-6xl mb-4 block group-hover:animate-bounce" style="display: inline-block; width: 100%; text-align: center;">💎</span>
+                                <p class="text-2xl font-bold text-tech mb-2 text-center">Lead Forward</p>
+                                <p class="text-sm text-accent text-center">African dev excellence</p>
+                            </div>
+                        </div>
+                        <div class="text-center space-y-2 animate-slideInUp magic-text delay-1">
+                            <p class="text-xl text-warm font-bold">🔥 The World is Waiting For You 🔥</p>
+                            <p class="text-tech">This is your season. This is your story.</p>
+                        </div>
+                        <div class="flex flex-col items-center animate-slideInUp magic-text delay-2 relative">
+                            <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                            <button class="hold-btn button-hint-label" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">→ Next Level →</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Birthday Surprise 🎁",
+                content: `
+                    <div class="space-y-8 text-center">
+                        <h2 class="glow-title text-5xl animate-slideInDown">⚡ LOADING MAGIC ⚡</h2>
+                        <p class="text-xl text-warm font-bold animate-slideInUp magic-text delay-1">Something incredible is about to happen...</p>
+                        <div class="flex justify-center mb-8 animate-slideInUp magic-text delay-2">
+                            <div class="relative w-40 h-40">
+                                <div class="absolute inset-0 rounded-full border-4 border-transparent animate-spin"
+                                    style="border-top-color: #e879f9; border-right-color: #38bdf8; animation-duration: 3s;"></div>
+                                <div class="absolute inset-4 rounded-full border-4 border-transparent animate-spin"
+                                    style="border-bottom-color: #ffd700; border-left-color: #ffb347; animation-duration: 5s; animation-direction: reverse;"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="text-5xl animate-float">🎁</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-3 animate-slideInUp magic-text delay-3">
+                            <span class="text-5xl animate-bounce">✨</span>
+                            <span class="text-5xl animate-bounce" style="animation-delay: 0.1s;">🎉</span>
+                            <span class="text-5xl animate-bounce" style="animation-delay: 0.2s;">✨</span>
+                            <span class="text-5xl animate-bounce" style="animation-delay: 0.3s;">🎊</span>
+                            <span class="text-5xl animate-bounce" style="animation-delay: 0.4s;">✨</span>
+                        </div>
+                        <div class="flex flex-col items-center animate-slideInUp magic-text delay-4">
+                            <button class="hold-btn pulse-glow text-lg button-hint-label relative" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                                <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">🎊 REVEAL 🎊</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "View Your Voucher 📄",
+                content: `
+                    <div class="space-y-6 text-center">
+                        <h2 class="glow-title text-5xl animate-slideInDown">🎁 YOUR GIFT 🎁</h2>
+                        <div class="animate-slideInUp magic-text delay-1">
+                            <p class="text-3xl font-bold text-gold mb-2">KES 500 Carrefour Voucher</p>
+                            <p class="text-tech text-lg">Go treat yourself! You deserve it! 🛍️✨</p>
+                        </div>
+                        <div class="flex justify-center gap-3 animate-slideInUp magic-text delay-2">
+                            <span class="text-4xl animate-bounce">💝</span>
+                            <span class="text-4xl animate-bounce" style="animation-delay: 0.1s;">🎁</span>
+                            <span class="text-4xl animate-bounce" style="animation-delay: 0.2s;">💝</span>
+                        </div>
+                        <button id="view-voucher" class="hold-btn animate-slideInUp magic-text delay-3 shimmer-glow text-lg button-hint-label relative" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                            <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                            <span class="hold-btn-fill"></span>
+                            <span class="hold-btn-label">✨ VIEW GIFT ✨</span>
+                        </button>
+                    </div>
+                `
+            },
+            {
+                title: "Download Your Voucher ⬇️",
+                content: `
+                    <div class="space-y-6 text-center">
+                        <h2 class="glow-title text-5xl animate-slideInDown bg-gradient-to-r from-warm to-gold bg-clip-text text-transparent">🌟 IT'S YOURS! 🌟</h2>
+                        <div class="space-y-3 animate-slideInUp magic-text delay-1">
+                            <p class="text-2xl font-bold text-warm">Save or Print Below</p>
+                            <p class="text-accent text-lg">You deserve this treat! 💝</p>
+                        </div>
+                        <div class="flex justify-center gap-4 animate-slideInUp magic-text delay-2">
+                            <span class="text-5xl animate-float">🎊</span>
+                            <span class="text-5xl animate-float" style="animation-delay: 0.2s;">✨</span>
+                            <span class="text-5xl animate-float" style="animation-delay: 0.4s;">🎊</span>
+                        </div>
+                        <div class="flex flex-col items-center animate-slideInUp magic-text delay-3">
+                            <button class="hold-btn text-lg button-hint-label relative" style="border-radius: 50px; padding: 0.875rem 1.75rem; position: relative;">
+                                <div class="absolute -top-16 -left-12 arrow-pointer">👉</div>
+                                <span class="hold-btn-fill"></span>
+                                <span class="hold-btn-label">→ FINISH →</span>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Congratulations 🌟",
+                content: `
+                    <div class="space-y-8 text-center">
+                        <h2 class="glow-title text-6xl animate-slideInDown">🎉 HAPPY BIRTHDAY 🎉</h2>
+                        <div class="space-y-3 animate-slideInUp magic-text delay-1">
+                            <p class="text-2xl font-bold text-warm">Patience!</p>
+                            <p class="text-tech text-xl">Another year to code. Another year to change the world.</p>
+                        </div>
+                        <div class="glass-card p-8 text-center animate-scaleInCenter magic-text delay-2">
+                            <p class="text-lg text-accent mb-2">Stay Faithful</p>
+                            <p class="text-lg text-warm font-bold mb-2">Stay Excellent</p>
+                            <p class="text-lg text-gold">Go International 🌍</p>
+                        </div>
+                        <div class="flex justify-center gap-4 animate-slideInUp magic-text delay-3">
+                            <span class="text-6xl animate-float">🎈</span>
+                            <span class="text-6xl animate-float" style="animation-delay: 0.2s;">🌍</span>
+                            <span class="text-6xl animate-float" style="animation-delay: 0.4s;">💻</span>
+                        </div>
+                        <div class="text-center space-y-2 animate-slideInUp magic-text delay-4">
+                            <p class="text-2xl font-bold text-warm">You've Got This! 💪</p>
+                            <p class="text-accent">From UoN to the world. Your time is NOW.</p>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+        
+        let currentStep = 0;
+        let voucherViewed = false;
+        
+        function renderProgress(step) {
+            const total = steps.length;
+            let html = '';
+            for (let i = 0; i < total; i++) {
+                const isActive = i <= step;
+                html += `
+                    <div class="flex items-center ${i > 0 ? 'ml-2' : ''}">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full border-2 transition-all duration-500 text-xs font-bold progress-number ${
+                            isActive
+                                ? 'border-gold bg-gradient-to-r from-warm to-gold text-darkbg shadow-lg'
+                                : 'border-tech/30 bg-darkbg/50 text-tech/50'
+                        }">${i + 1}</div>
+                        ${i < total - 1 ? `<div class="w-8 h-1 ${isActive ? 'bg-gradient-to-r from-warm to-gold' : 'bg-tech/20'} mx-1 rounded-full transition-all duration-500 progress-line"></div>` : ''}
+                    </div>
+                `;
+            }
+            document.getElementById('progress').innerHTML = html;
+        }
+        
+        function renderStep() {
+            const step = steps[currentStep];
+            const content = document.getElementById('step-content');
+            const persistentHint = document.getElementById('persistent-hint');
+            const persistentLabel = document.getElementById('persistent-hint-label');
+            
+            // Fade out old content slowly
+            content.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+            
+            // Hide persistent hint when leaving step 0
+            if (currentStep !== 0) {
+                persistentHint.classList.remove('show');
+                persistentLabel.classList.remove('show');
+            }
+            
+            setTimeout(() => {
+                content.innerHTML = `<div class="transition-all duration-300">${step.content}</div>`;
+                content.className = `step-${currentStep}`;
+                renderProgress(currentStep);
+                
+                // Show persistent hint on first slide
+                if (currentStep === 0) {
+                    persistentHint.classList.add('show');
+                    persistentLabel.classList.add('show');
+                }
+                
+                // Fade in new content
+                // Add transition for smooth fade in
+                content.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                    content.style.transform = 'translateY(0)';
+                }, 50);
+                
+                setupStepListeners();
+            }, 1000);
+        }
+        
+        function setupStepListeners() {
+            // Hold button logic
+            document.querySelectorAll('.hold-btn').forEach(btn => {
+                if (btn.classList.contains('has-listener')) return;
+                btn.classList.add('has-listener');
+                
+                let fillAnim, startTime;
+                const fill = btn.querySelector('.hold-btn-fill');
+                const duration = 2000;
+                
+                function startHold(e) {
+                    if (e) e.preventDefault();
+                    startTime = Date.now();
+                    fill.style.width = '0%';
+                    
+                    fillAnim = setInterval(() => {
+                        const elapsed = Date.now() - startTime;
+                        const percent = Math.min(100, (elapsed / duration) * 100);
+                        fill.style.width = percent + '%';
+                        
+                        if (percent >= 100) {
+                            clearInterval(fillAnim);
+                            // 2-second button visibility delay before transitioning
+                            setTimeout(() => {
+                                currentStep++;
+                                renderStep();
+                            }, 2000);
+                        }
+                    }, 16);
+                }
+                
+                function endHold() {
+                    clearInterval(fillAnim);
+                    fill.style.width = '0%';
+                }
+                
+                btn.onmousedown = startHold;
+                btn.ontouchstart = startHold;
+                btn.onmouseup = endHold;
+                btn.onmouseleave = endHold;
+                btn.ontouchend = endHold;
+            });
+            
+            // Breathe button
+            if (currentStep === 3) {
+                const breatheBtn = document.getElementById('breathe-btn');
+                const overlay = document.getElementById('breathe-overlay');
+                const countEl = document.getElementById('breathe-count');
+                
+                breatheBtn.addEventListener('click', () => {
+                    overlay.classList.remove('hidden');
+                    let count = 5;
+                    
+                    function showCount() {
+                        countEl.textContent = count;
+                        countEl.classList.remove('opacity-0', 'scale-90');
+                        countEl.classList.add('opacity-100', 'scale-100');
+                        
+                        setTimeout(() => {
+                            countEl.classList.remove('opacity-100', 'scale-100');
+                            countEl.classList.add('opacity-0', 'scale-90');
+                            
+                            if (count > 1) {
+                                setTimeout(() => { count--; showCount(); }, 700);
+                            } else {
+                                setTimeout(() => {
+                                    overlay.classList.add('hidden');
+                                    // 2-second delay before moving to next step
+                                    setTimeout(() => {
+                                        currentStep++;
+                                        renderStep();
+                                    }, 2000);
+                                }, 500);
+                            }
+                        }, 700);
+                    }
+                    showCount();
+                });
+            }
+            
+            // Future cards animation
+            if (currentStep === 4) {
+                const cards = document.querySelectorAll('.future-card');
+                cards.forEach((card, i) => {
+                    setTimeout(() => {
+                        card.classList.remove('opacity-0', 'scale-95');
+                        card.classList.add('opacity-100', 'scale-100');
+                    }, 300 + i * 500);
+                });
+            }
+            
+            // View voucher
+            if (currentStep === 6) {
+                document.getElementById('view-voucher').addEventListener('click', () => {
+                    // BUSY CELEBRATION: Launch confetti!
+                    launchConfetti();
+                    document.getElementById('voucherSection').classList.remove('hidden');
+                    voucherViewed = true;
+                    setTimeout(() => {
+                        currentStep++;
+                        renderStep();
+                    }, 900);
+                });
+            }
+            
+            // Show voucher on step 7
+            if (currentStep === 7) {
+                document.getElementById('voucherSection').classList.remove('hidden');
+            }
+        }
+        
+        // CONFETTI BURST FUNCTION - Makes voucher reveal BUSY and celebratory! 🎊
+        function launchConfetti() {
+            const totalPieces = 150;
+            const emojis = ['✨', '🎉', '🎊', '💝', '🎁', '🌟', '💫', '🎈', '💎'];
+            
+            // Pattern 1: Left-to-Right Crisscross (top-left to bottom-right)
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece falling';
+                    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    piece.style.fontSize = Math.random() * 20 + 15 + 'px';
+                    // From left side
+                    piece.style.left = Math.random() * 20 + '%';
+                    piece.style.top = '-30px';
+                    piece.style.opacity = Math.random() * 0.5 + 0.5;
+                    // Crisscross trajectory - move right as it falls
+                    piece.style.setProperty('--fall-x', (Math.random() * 40 + 40) + '%');
+                    piece.style.animation = `confetti-fall-left 30s linear forwards`;
+                    
+                    document.body.appendChild(piece);
+                    setTimeout(() => piece.remove(), 31000);
+                }, i * 40);
+            }
+            
+            // Pattern 2: Right-to-Left Crisscross (top-right to bottom-left)
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece falling';
+                    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    piece.style.fontSize = Math.random() * 20 + 15 + 'px';
+                    // From right side
+                    piece.style.left = Math.random() * 20 + 80 + '%';
+                    piece.style.top = '-30px';
+                    piece.style.opacity = Math.random() * 0.5 + 0.5;
+                    // Crisscross trajectory - move left as it falls
+                    piece.style.setProperty('--fall-x', (Math.random() * -40 - 40) + '%');
+                    piece.style.animation = `confetti-fall-right 30s linear forwards`;
+                    
+                    document.body.appendChild(piece);
+                    setTimeout(() => piece.remove(), 31000);
+                }, i * 40);
+            }
+            
+            // Pattern 3: Center Explosion (radiating outward then falling)
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece falling';
+                    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    piece.style.fontSize = Math.random() * 20 + 15 + 'px';
+                    // Center start
+                    piece.style.left = 50 + '%';
+                    piece.style.top = '30%';
+                    piece.style.opacity = Math.random() * 0.5 + 0.5;
+                    // Radiate outward
+                    const angle = (i / 50) * Math.PI * 2;
+                    const distance = 200;
+                    piece.style.setProperty('--burst-x', Math.cos(angle) * distance + 'px');
+                    piece.style.setProperty('--burst-y', Math.sin(angle) * distance + 'px');
+                    piece.style.animation = `confetti-burst 30s ease-out forwards`;
+                    
+                    document.body.appendChild(piece);
+                    setTimeout(() => piece.remove(), 31000);
+                }, i * 20);
+            }
+        }
+        
+        // Voucher actions
+        document.getElementById('voucher-download').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'voucher.pdf';
+            link.download = 'Patience_Birthday_Voucher.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        document.getElementById('voucher-print').addEventListener('click', () => {
+            const iframe = document.querySelector('#voucher-card iframe');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+            } else {
+                window.open('voucher.pdf', '_blank');
+            }
+        });
+        
+        // PDF Modal
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('pdf-modal').classList.add('hidden');
+        });
+        
+        // Initialize
+        renderStep();
+        
+        // Performance: Reduce particle count on low-end devices
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            particleSystem.particleCount = 16;
+        }
+    </script>
+</body>
+</html>
