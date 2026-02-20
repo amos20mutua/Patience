@@ -12,9 +12,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
-        --bg-0: #080717;
-        --bg-1: #140f34;
-        --bg-2: #281b4f;
+        --bg-0: #12091f;
+        --bg-1: #261044;
+        --bg-2: #3a1d63;
+        --sunrise-gold: #ffce87;
+        --sunrise-rose: #ff9cb8;
+        --sunrise-peach: #ffc7a1;
         --lilac: #c8b5ff;
         --rose: #f3b5d7;
         --mist: #a8f3ff;
@@ -35,6 +38,9 @@
         overflow: hidden;
         color: var(--ink);
         background:
+          radial-gradient(980px 520px at 52% -12%, rgba(255, 206, 135, 0.24), transparent 58%),
+          radial-gradient(900px 460px at 78% 0%, rgba(255, 156, 184, 0.2), transparent 60%),
+          radial-gradient(640px 360px at 24% 2%, rgba(255, 199, 161, 0.18), transparent 62%),
           radial-gradient(1200px 700px at 8% -6%, rgba(243, 181, 215, 0.18), transparent 60%),
           radial-gradient(900px 700px at 100% 8%, rgba(168, 243, 255, 0.15), transparent 60%),
           radial-gradient(800px 600px at 50% 110%, rgba(200, 181, 255, 0.16), transparent 70%),
@@ -210,12 +216,42 @@
         opacity: 0;
         transform: translateY(18px);
         backdrop-filter: blur(18px);
+        background:
+          radial-gradient(240px 100px at 12% 10%, rgba(255, 206, 135, 0.18), transparent 72%),
+          radial-gradient(220px 95px at 82% 14%, rgba(255, 156, 184, 0.14), transparent 72%),
+          radial-gradient(180px 80px at 14% 18%, rgba(168, 243, 255, 0.16), transparent 72%),
+          radial-gradient(200px 90px at 86% 86%, rgba(243, 181, 215, 0.16), transparent 72%),
+          linear-gradient(152deg, rgba(46, 30, 90, 0.84), rgba(16, 12, 44, 0.8));
         box-shadow:
-          0 38px 110px rgba(8, 5, 24, 0.7),
+          0 40px 110px rgba(8, 5, 24, 0.68),
+          0 0 46px rgba(175, 150, 255, 0.14),
           inset 0 1px 0 rgba(255, 255, 255, 0.18),
-          inset 0 0 0 1px rgba(193, 168, 255, 0.12);
+          inset 0 0 0 1px rgba(205, 182, 255, 0.2);
         transition: opacity 780ms cubic-bezier(0.2, 0.65, 0.2, 1), transform 780ms cubic-bezier(0.2, 0.65, 0.2, 1);
-        animation: card-float 7.2s ease-in-out infinite;
+        animation: card-float 7.2s ease-in-out infinite, aura-pulse 5.8s ease-in-out infinite;
+      }
+
+      .story-card > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .verse-wave {
+        position: absolute;
+        inset: -8% -18%;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+        mix-blend-mode: screen;
+        background:
+          radial-gradient(180px 90px at 20% 50%, rgba(255, 238, 205, 0.24), transparent 72%),
+          radial-gradient(220px 120px at 50% 50%, rgba(255, 206, 135, 0.2), transparent 74%),
+          radial-gradient(200px 100px at 82% 50%, rgba(168, 243, 255, 0.16), transparent 70%);
+        transform: translateX(-42%) scale(1);
+      }
+
+      .story-card.verse-awakened .verse-wave {
+        animation: verse-wave-travel 4.8s cubic-bezier(0.18, 0.58, 0.28, 1) infinite, verse-wave-rise 16s ease-out forwards;
       }
 
       #main-page.active.revealed .story-card {
@@ -228,7 +264,7 @@
         position: absolute;
         inset: -20% -35% auto;
         height: 56%;
-        background: linear-gradient(110deg, transparent 36%, rgba(255, 255, 255, 0.08) 50%, transparent 64%);
+        background: linear-gradient(110deg, transparent 34%, rgba(255, 255, 255, 0.16) 50%, transparent 66%);
         transform: translateX(-120%);
         animation: sweep 9.6s ease-in-out infinite;
         pointer-events: none;
@@ -241,8 +277,12 @@
         border-radius: inherit;
         pointer-events: none;
         box-shadow:
-          inset 0 0 0 1px rgba(218, 194, 255, 0.24),
-          inset 0 0 36px rgba(197, 176, 255, 0.12);
+          inset 0 0 0 1px rgba(223, 205, 255, 0.3),
+          inset 0 0 46px rgba(188, 227, 255, 0.14);
+      }
+
+      .story-card.verse-awakened::after {
+        animation: verse-border-rise 16s ease-out forwards;
       }
 
       @keyframes sweep {
@@ -263,6 +303,51 @@
         }
         50% {
           transform: translateY(-3px);
+        }
+      }
+
+      @keyframes aura-pulse {
+        0%,
+        100% {
+          filter: saturate(1) brightness(1);
+        }
+        50% {
+          filter: saturate(1.09) brightness(1.06);
+        }
+      }
+
+      @keyframes verse-wave-travel {
+        0% {
+          transform: translateX(-42%) scale(0.96);
+        }
+        45% {
+          transform: translateX(8%) scale(1.02);
+        }
+        100% {
+          transform: translateX(48%) scale(1.06);
+        }
+      }
+
+      @keyframes verse-wave-rise {
+        0% {
+          opacity: 0.08;
+        }
+        100% {
+          opacity: 0.52;
+        }
+      }
+
+      @keyframes verse-border-rise {
+        0% {
+          box-shadow:
+            inset 0 0 0 1px rgba(223, 205, 255, 0.3),
+            inset 0 0 46px rgba(188, 227, 255, 0.14);
+        }
+        100% {
+          box-shadow:
+            inset 0 0 0 1px rgba(255, 236, 205, 0.44),
+            inset 0 0 62px rgba(255, 199, 161, 0.18),
+            inset 0 0 90px rgba(168, 243, 255, 0.16);
         }
       }
 
@@ -300,6 +385,8 @@
       .signature-line {
         opacity: 0;
         transform: translateY(6px);
+        color: rgba(190, 236, 255, 0.86);
+        text-shadow: 0 0 12px rgba(168, 243, 255, 0.18);
         transition: opacity 480ms ease, transform 480ms ease;
       }
 
@@ -307,6 +394,106 @@
         opacity: 1;
         transform: translateY(0);
         transition-delay: 420ms;
+      }
+
+      .countdown-stage {
+        position: relative;
+        margin-top: 14px;
+        width: 100%;
+        min-height: 110px;
+        border-radius: 16px;
+        border: 1px solid rgba(226, 210, 255, 0.28);
+        background:
+          radial-gradient(220px 90px at 10% 20%, rgba(168, 243, 255, 0.14), transparent 70%),
+          radial-gradient(240px 100px at 85% 80%, rgba(243, 181, 215, 0.14), transparent 70%),
+          rgba(10, 10, 26, 0.72);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+          0 16px 34px rgba(10, 8, 28, 0.45);
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 320ms ease, transform 320ms ease;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+      }
+
+      #main-page.active.revealed .countdown-stage.live {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .countdown-number {
+        margin: 0;
+        font-size: clamp(42px, 9vw, 62px);
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(248, 242, 255, 0.98);
+        text-shadow: 0 0 14px rgba(195, 175, 255, 0.26);
+      }
+
+      #birthday-line {
+        color: rgba(245, 244, 255, 0.98);
+        text-shadow: 0 0 16px rgba(191, 173, 255, 0.2);
+      }
+
+      #letter-body {
+        color: rgba(236, 232, 255, 0.9);
+      }
+
+      #letter-body p {
+        margin: 0;
+        padding-left: 10px;
+        border-left: 2px solid rgba(172, 238, 255, 0.34);
+      }
+
+      .verse-line {
+        margin-top: 8px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 206, 135, 0.26);
+        background: linear-gradient(120deg, rgba(255, 206, 135, 0.12), rgba(255, 156, 184, 0.08));
+        color: rgba(251, 245, 255, 0.92);
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .countdown-note {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 240ms ease, transform 240ms ease;
+        text-align: center;
+      }
+
+      .countdown-note.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .countdown-note h3 {
+        margin: 0;
+        font-size: clamp(20px, 5vw, 30px);
+        font-weight: 700;
+        color: rgba(245, 241, 255, 0.96);
+      }
+
+      .countdown-note p {
+        margin: 4px 0 0;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(226, 211, 255, 0.8);
+      }
+
+      .reveal-copy {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 260ms ease, transform 260ms ease;
+      }
+
+      .reveal-copy.show {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .wish-modal-backdrop {
@@ -348,6 +535,21 @@
         .mascot {
           opacity: 0.38;
         }
+
+        #main-page {
+          padding-top: 14px;
+          padding-bottom: 24px;
+        }
+
+        .story-card {
+          padding: 18px 16px 20px !important;
+        }
+
+        .countdown-stage {
+          margin-top: 12px;
+          min-height: 96px;
+          border-radius: 14px;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -358,7 +560,12 @@
         .button-soft,
         .hint,
         .story-card,
+        .story-card::after,
+        .verse-wave,
         .signature-line,
+        .countdown-stage,
+        .countdown-note,
+        .reveal-copy,
         .wish-modal-backdrop {
           animation: none !important;
           transition: none !important;
@@ -410,34 +617,36 @@
     <main id="main-page" class="screen screen-shell px-4 py-8 sm:px-6 md:px-8">
       <div class="mx-auto flex min-h-[86vh] w-full story-wrap items-center justify-center">
         <section class="story-card w-full rounded-[30px] p-6 sm:p-8 md:p-10">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/70">A SMALL RECORD &bull; FEBRUARY 2026</p>
-          <h2 class="mt-3 text-4xl font-semibold tracking-tight text-violet-50 sm:text-5xl">Patience</h2>
-          <p class="signature-line mt-1 text-xs tracking-wide text-violet-200/56">quietly at the beginning</p>
-          <p class="mt-4 text-lg text-violet-100/95">Happy Birthday.</p>
+          <div class="verse-wave" aria-hidden="true"></div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/70">A NOTE FOR YOU &bull; FEBRUARY 2026</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-violet-50 sm:text-4xl md:text-5xl">Patience</h2>
+          <p class="signature-line mt-1 text-xs tracking-wide text-violet-200/56">one step at a time, still moving forward</p>
+          <div id="countdown-stage" class="countdown-stage" aria-live="polite">
+            <p id="countdown-number" class="countdown-number">5</p>
+            <div id="countdown-note" class="countdown-note" hidden>
+              <h3>Happy Birthday!</h3>
+              <p>Your letter is ready</p>
+            </div>
+          </div>
+          <p id="birthday-line" class="mt-4 text-base font-medium text-violet-100/95 sm:text-lg reveal-copy" hidden>Happy Birthday.</p>
 
-          <div class="mt-6 max-w-2xl text-sm leading-relaxed text-violet-100/80 sm:text-base">
-            <p>
-              You have a calm kind of brightness.<br>
-              Not loud. Not forced. Just steady.<br><br>
-              It shows in the way you think &mdash; the way you question things instead of just accepting them.<br>
-              That kind of mind fits naturally in tech.<br><br>
-              You&rsquo;re still early in the story.<br>
-              That&rsquo;s not a gap. That&rsquo;s space.<br><br>
-              Space to test ideas.<br>
-              Space to change direction.<br>
-              Space to build something that actually feels like you.<br><br>
-              And maybe years from now, when things are bigger and louder,<br>
-              you&rsquo;ll remember that there was a version of you right here &mdash;<br>
-              curious, beginning, becoming.
-            </p>
+          <div id="letter-body" class="mt-4 max-w-xl space-y-2 text-[13px] leading-5 text-violet-100/85 sm:text-[14px] sm:leading-6 reveal-copy" hidden>
+            <p>It is rare to meet someone who matches ambition with such a deep, grounded faith.</p>
+            <p>Watching you step into this new season of growth, from getting into Tech to seeking God more intentionally, is truly inspiring.</p>
+            <p>I wanted to make this for you because I know how much you value the journey of learning and the beauty of growth.</p>
+            <p>I hope today is as profound and beautiful as the path you are walking.</p>
+            <p>And I pray this year brings you into even deeper closeness with God.</p>
+            <p>Here is to a year of fewer logical hurdles and more of God&rsquo;s grace.</p>
+            <p class="verse-line">&ldquo;The path of the righteous is like the morning sun, shining ever brighter till the full light of day.&rdquo; Proverbs 4:18 (NIV)</p>
           </div>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <button id="wish-btn" class="button-soft rounded-full px-5 py-2.5 text-sm font-medium">Tap to reveal a tiny wish &#10024;</button>
+            <button id="wish-btn" class="button-soft rounded-full px-5 py-2.5 text-sm font-medium">Tap for a quick boost &#10024;</button>
             <button id="replay-btn" class="button-soft rounded-full px-5 py-2.5 text-sm font-medium">Replay</button>
           </div>
 
           <p class="mt-9 text-xs text-violet-200/60">No expectations. Just a moment made on purpose.</p>
+          <p class="mt-1 text-[9px] tracking-[0.2em] text-violet-200/30 select-none">💻·Amos/8th Feb</p>
         </section>
       </div>
     </main>
@@ -465,10 +674,16 @@
         const text = document.getElementById('slider-text');
         const hero = document.getElementById('hero');
         const mainPage = document.getElementById('main-page');
+        const storyCard = document.querySelector('.story-card');
         const replayBtn = document.getElementById('replay-btn');
         const wishBtn = document.getElementById('wish-btn');
         const wishModalBackdrop = document.getElementById('wish-modal-backdrop');
         const wishCloseBtn = document.getElementById('wish-close-btn');
+        const countdownStage = document.getElementById('countdown-stage');
+        const countdownNumber = document.getElementById('countdown-number');
+        const countdownNote = document.getElementById('countdown-note');
+        const birthdayLine = document.getElementById('birthday-line');
+        const letterBody = document.getElementById('letter-body');
 
         const starCanvas = document.getElementById('star-canvas');
         const ctx = starCanvas.getContext('2d', { alpha: true });
@@ -491,6 +706,7 @@
         };
 
         const stars = [];
+        const sequenceTimers = new Set();
         const mascotMeta = mascots.map((el, i) => ({
           el,
           phase: Math.random() * Math.PI * 2,
@@ -499,6 +715,81 @@
 
         const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
         const rand = (min, max) => Math.random() * (max - min) + min;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        function scheduleSequence(fn, delay) {
+          const id = setTimeout(() => {
+            sequenceTimers.delete(id);
+            fn();
+          }, delay);
+          sequenceTimers.add(id);
+          return id;
+        }
+
+        function clearSequenceTimers() {
+          for (const id of sequenceTimers) clearTimeout(id);
+          sequenceTimers.clear();
+        }
+
+        function hideLetterCopy() {
+          if (birthdayLine) {
+            birthdayLine.classList.remove('show');
+            birthdayLine.hidden = true;
+          }
+          if (letterBody) {
+            letterBody.classList.remove('show');
+            letterBody.hidden = true;
+          }
+        }
+
+        function revealLetterCopy() {
+          if (birthdayLine) birthdayLine.hidden = false;
+          if (letterBody) letterBody.hidden = false;
+          if (storyCard) storyCard.classList.add('verse-awakened');
+          requestAnimationFrame(() => {
+            if (birthdayLine) birthdayLine.classList.add('show');
+            if (letterBody) letterBody.classList.add('show');
+          });
+        }
+
+        function resetCountdownSequence() {
+          clearSequenceTimers();
+          if (countdownStage) countdownStage.classList.remove('live');
+          if (storyCard) storyCard.classList.remove('verse-awakened');
+          if (countdownNumber) {
+            countdownNumber.hidden = false;
+            countdownNumber.textContent = '5';
+          }
+          if (countdownNote) {
+            countdownNote.hidden = true;
+            countdownNote.classList.remove('show');
+          }
+          hideLetterCopy();
+        }
+
+        function startCountdownSequence() {
+          if (!countdownStage || !countdownNumber || !countdownNote) return;
+          resetCountdownSequence();
+          countdownStage.classList.add('live');
+
+          let remaining = 5;
+          const delay = prefersReducedMotion.matches ? 250 : 1000;
+          countdownNumber.textContent = String(remaining);
+
+          const tick = () => {
+            remaining -= 1;
+            if (remaining <= 0) {
+              countdownNumber.hidden = true;
+              countdownNote.hidden = false;
+              scheduleSequence(() => countdownNote.classList.add('show'), 20);
+              scheduleSequence(revealLetterCopy, 120);
+              return;
+            }
+            countdownNumber.textContent = String(remaining);
+            scheduleSequence(tick, delay);
+          };
+          scheduleSequence(tick, prefersReducedMotion.matches ? 100 : 1000);
+        }
 
         function resizeCanvas() {
           const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -589,6 +880,7 @@
             mainPage.classList.add('active');
             requestAnimationFrame(() => {
               mainPage.classList.add('revealed');
+              startCountdownSequence();
             });
           }, 180);
         }
@@ -596,6 +888,7 @@
         function replay() {
           unlocked = false;
           dragStarted = false;
+          resetCountdownSequence();
           mainPage.classList.remove('active', 'revealed');
           hero.classList.add('active');
           closeWishModal();
@@ -738,6 +1031,7 @@
 
         resizeCanvas();
         seedStars();
+        resetCountdownSequence();
         resetSlider();
         requestAnimationFrame(animate);
       })();
